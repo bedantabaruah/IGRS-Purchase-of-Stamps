@@ -35,7 +35,7 @@
   function inBubble(html,ctas,time){
     time=time||TIME;
     const row=document.createElement('div');row.className='row in';
-    let c='';if(ctas){ctas.forEach(x=>{c+='<div class="cta-row" data-act="'+x.act+'">'+x.label+'</div>';});}
+    let c='';if(ctas){ctas.forEach(x=>{c+='<button type="button" class="cta-row" data-act="'+x.act+'">'+x.label+'</button>';});}
     row.innerHTML='<div class="bubble"><div class="txt">'+html+'</div><div class="meta"><span class="time">'+time+'</span></div>'+c+'</div>';
     chat.appendChild(row);
     row.querySelectorAll('.cta-row').forEach(el=>el.addEventListener('click',()=>handleAct(el.dataset.act)));
